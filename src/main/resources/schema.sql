@@ -22,7 +22,7 @@ INSERT INTO oauth_client_details
     web_server_redirect_uri, authorities, access_token_validity,
     refresh_token_validity, additional_information, autoapprove)
 VALUES
-    ('eagleeye', 'thisissecret', 'webclient,mobileclient',
+    ('embassy', 'thisissecret', 'webclient,mobileclient',
     'refresh_token,password,client_credentials', null, null, 36000, 36000, null, true);
 
 
@@ -45,18 +45,16 @@ CREATE TABLE user_orgs (
   PRIMARY KEY (user_name));
 
 
---INSERT INTO USERS(USERNAME ,password,enabled) VALUES ('john.carnell','password1', true);
---INSERT INTO USERS(USERNAME ,password,enabled) VALUES ('william.woodward','password2', true);
 
-INSERT INTO USERS(USERNAME ,password,enabled) VALUES ('john.carnell','$2a$10$D.MqRrSRnA3qSaZy6aSMVekENfCdO7zhzr6XzZGmY5dnbxyl/0A3q', true);
-INSERT INTO USERS(USERNAME ,password,enabled) VALUES ('william.woodward','$2a$10$wONCCP43ci53zeUhWJHlGe0P9XaKuixAnFipy4KFG.LKF90NtxvXi', true);
-INSERT INTO AUTHORITIES (USERNAME, AUTHORITY) VALUES ('john.carnell', 'ROLE_USER');
-INSERT INTO AUTHORITIES (USERNAME, AUTHORITY) VALUES ('william.woodward', 'ROLE_ADMIN');
-INSERT INTO AUTHORITIES (USERNAME, AUTHORITY) VALUES ('william.woodward', 'ROLE_USER');
+INSERT INTO USERS(USERNAME ,password,enabled) VALUES ('will.du','$2a$10$D.MqRrSRnA3qSaZy6aSMVekENfCdO7zhzr6XzZGmY5dnbxyl/0A3q', true);
+INSERT INTO USERS(USERNAME ,password,enabled) VALUES ('robert.wang','$2a$10$wONCCP43ci53zeUhWJHlGe0P9XaKuixAnFipy4KFG.LKF90NtxvXi', true);
+INSERT INTO AUTHORITIES (USERNAME, AUTHORITY) VALUES ('will.du', 'ROLE_USER');
+INSERT INTO AUTHORITIES (USERNAME, AUTHORITY) VALUES ('robert.wang', 'ROLE_ADMIN');
+INSERT INTO AUTHORITIES (USERNAME, AUTHORITY) VALUES ('robert.wang', 'ROLE_USER');
 
---INSERT INTO user_roles (user_name, role) VALUES ('john.carnell', 'ROLE_USER');
---INSERT INTO user_roles (user_name, role) VALUES ('william.woodward', 'ROLE_ADMIN');
---INSERT INTO user_roles (user_name, role) VALUES ('william.woodward', 'ROLE_USER');
+--INSERT INTO user_roles (user_name, role) VALUES ('will.du', 'ROLE_USER');
+--INSERT INTO user_roles (user_name, role) VALUES ('robert.wang', 'ROLE_ADMIN');
+--INSERT INTO user_roles (user_name, role) VALUES ('robert.wang', 'ROLE_USER');
 
-INSERT INTO user_orgs (organization_id, user_name) VALUES ('d1859f1f-4bd7-4593-8654-ea6d9a6a626e', 'john.carnell');
-INSERT INTO user_orgs (organization_id, user_name) VALUES ('42d3d4f5-9f33-42f4-8aca-b7519d6af1bb', 'william.woodward');
+INSERT INTO user_orgs (organization_id, user_name) VALUES ('d1859f1f-4bd7-4593-8654-ea6d9a6a626e', 'will.du');
+INSERT INTO user_orgs (organization_id, user_name) VALUES ('42d3d4f5-9f33-42f4-8aca-b7519d6af1bb', 'robert.wang');
