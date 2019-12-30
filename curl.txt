@@ -1,0 +1,2 @@
+
+curl --location --request POST "http://localhost:8080/auth/oauth/token" --header "Authorization: Basic ZW1iYXNzeTp0aGlzaXNzZWNyZXQ=" --header "Content-Type: multipart/form-data; boundary=--------------------------727087620079613204050588" --form "grant_type=password" --form "scope=webclient" --form "username=robert.wang" --form "password=password2"
