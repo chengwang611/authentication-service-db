@@ -18,11 +18,13 @@ import java.util.Map;
 @EnableAuthorizationServer
 
 /**
- * curl --location --request POST 'http://localhost:8080/auth/oauth/token' \
+curl --location --request POST 'http://localhost:8080/auth/oauth/token' \
+--header 'Authorization: Basic ZW1iYXNzeTp0aGlzaXNzZWNyZXQ=' \
+--header 'Content-Type: multipart/form-data; boundary=--------------------------727087620079613204050588' \
 --form 'grant_type=password' \
 --form 'scope=webclient' \
---form 'username=will.du' \
---form 'password=password1'
+--form 'username=robert.wang' \
+--form 'password=password2'
  * @author chengwang2019
  *
  *
