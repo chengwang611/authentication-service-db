@@ -16,6 +16,19 @@ import java.util.Map;
 @RestController
 @EnableResourceServer
 @EnableAuthorizationServer
+
+/**
+ * curl --location --request POST 'http://localhost:8080/auth/oauth/token' \
+--form 'grant_type=password' \
+--form 'scope=webclient' \
+--form 'username=will.du' \
+--form 'password=password1'
+ * @author chengwang2019
+ *
+ *
+ *curl --location --request GET 'http://localhost:8084/hive/list/foodmart/customer' \
+--header 'Authorization: Bearer d2beaa3b-c103-4b05-b6b9-0cf78a01b53b'
+ */
 public class Application {
     @RequestMapping(value = { "/user" }, produces = "application/json")
     public Map<String, Object> user(OAuth2Authentication user) {
