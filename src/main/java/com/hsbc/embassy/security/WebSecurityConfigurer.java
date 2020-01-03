@@ -30,7 +30,14 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
    private DataSource h2DataSource;
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.jdbcAuthentication().dataSource(h2DataSource).passwordEncoder(new BCryptPasswordEncoder());
-
+ //       auth.jdbcAuthentication().dataSource(h2DataSource).passwordEncoder(new BCryptPasswordEncoder());
+      auth.ldapAuthentication().
+      userSearchBase("ou=people")
+      .userSearchFilter("(uid={0})")
+      .groupSearchBase("ou=groups")
+      .groupSearchFilter("member={0}")
+      .contextSource()
+      .root("dc=mandiri,dc=dis")
+      .ldif("classpath:/data/users.ldif");
     }
 }
